@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+.chronicle/
+dist/
+build/
+src/chronicle/webui_dist/
+webui/node_modules/

@@ -1,0 +1,148 @@
+/* Palette values are the dataviz reference instance, validated for CVD
+   safety in both modes (see webui/DESIGN.md) -- not invented here. */
+
+:root {
+  color-scheme: light;
+
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-secondary: #52514e;
+  --ink-muted: #898781;
+  --hairline: #e1e0d9;
+  --border-ring: rgba(11, 11, 11, 0.1);
+  --focus-ring: #2a78d6;
+
+  --agent-1: #2a78d6; /* blue */
+  --agent-2: #eb6834; /* orange */
+  --agent-3: #1baf7a; /* aqua */
+  --agent-4: #eda100; /* yellow */
+  --agent-5: #e87ba4; /* magenta */
+  --agent-6: #008300; /* green */
+  --agent-7: #4a3aa7; /* violet */
+  --agent-8: #e34948; /* red */
+
+  --diff-add-fg: #006300;
+  --diff-add-bg: rgba(19, 130, 19, 0.1);
+  --diff-remove-fg: #a41414;
+  --diff-remove-bg: rgba(203, 44, 44, 0.1);
+
+  --font-ui: -apple-system, "Segoe UI", system-ui, sans-serif;
+  --font-data: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #ffffff;
+    --ink-secondary: #c3c2b7;
+    --ink-muted: #898781;
+    --hairline: #2c2c2a;
+    --border-ring: rgba(255, 255, 255, 0.1);
+    --focus-ring: #3987e5;
+
+    --agent-1: #3987e5;
+    --agent-2: #d95926;
+    --agent-3: #199e70;
+    --agent-4: #c98500;
+    --agent-5: #d55181;
+    --agent-6: #008300;
+    --agent-7: #9085e9;
+    --agent-8: #e66767;
+
+    --diff-add-fg: #4fdc4f;
+    --diff-add-bg: rgba(19, 130, 19, 0.18);
+    --diff-remove-fg: #ff8080;
+    --diff-remove-bg: rgba(203, 44, 44, 0.18);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --ink: #ffffff;
+  --ink-secondary: #c3c2b7;
+  --ink-muted: #898781;
+  --hairline: #2c2c2a;
+  --border-ring: rgba(255, 255, 255, 0.1);
+  --focus-ring: #3987e5;
+
+  --agent-1: #3987e5;
+  --agent-2: #d95926;
+  --agent-3: #199e70;
+  --agent-4: #c98500;
+  --agent-5: #d55181;
+  --agent-6: #008300;
+  --agent-7: #9085e9;
+  --agent-8: #e66767;
+
+  --diff-add-fg: #4fdc4f;
+  --diff-add-bg: rgba(19, 130, 19, 0.18);
+  --diff-remove-fg: #ff8080;
+  --diff-remove-bg: rgba(203, 44, 44, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+code,
+.mono,
+.font-data {
+  font-family: var(--font-data);
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--hairline);
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
