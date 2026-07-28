@@ -8,3 +8,4 @@ dist/
 build/
 src/chronicle/webui_dist/
 webui/node_modules/
+chronicle_build_plan.md
