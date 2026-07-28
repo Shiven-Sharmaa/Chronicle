@@ -4,7 +4,7 @@
 
 Claude Code, Codex, and Cursor each have their own checkpoint system: session-scoped, tool-scoped, expiring, linear-undo-only. `chronicle` sits underneath all of them and records what actually happened to your repository — including `rm`, `mv`, manual edits, and anything else that isn't a tool call.
 
-This repo currently implements **Phases 1–3** of the build plan (see `chronicle_build_plan.md`): a usable standalone tool with per-agent attribution and a local web UI.
+This repo currently implements **Phases 1–3** of the build plan: a usable standalone tool with per-agent attribution and a local web UI.
 
 ## What it does today
 
